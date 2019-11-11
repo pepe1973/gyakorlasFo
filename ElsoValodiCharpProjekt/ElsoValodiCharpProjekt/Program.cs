@@ -351,7 +351,6 @@ namespace ElsoValodiCharpProjekt
 
             Console.WriteLine($"A beolvasott számok összege: {osszeg}");
 			
-
             Console.ReadKey(true);
         }
 
