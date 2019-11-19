@@ -158,15 +158,16 @@ namespace MasodikValodiCsharpProjekt
             }*/
 
             // 35. feladat:
-            int sorok = 5;
+            int sorok = 3;
             for (int i = 0; i < sorok; i++)
             {
-                for (int j = 0; j < sorok + 1; j++)
+                for (int j = 0; j < 10; j++)
                 {
-                    if (97 + i + j * sorok  < 123)
+					int eddig = 97 + i + j * sorok;
+                    if (eddig  < 123)
                     {
-                        Console.SetCursorPosition(j * 10, i);
-                        Console.WriteLine($"{(char)(97 + i + j * sorok)} {97 + i + j * sorok}");
+                        Console.SetCursorPosition(j * 8, i);
+                        Console.WriteLine($"{(char)(eddig)} {eddig}");
                     }
                 }
             }
