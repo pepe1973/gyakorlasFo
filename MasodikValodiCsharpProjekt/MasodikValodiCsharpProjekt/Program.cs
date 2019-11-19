@@ -136,17 +136,38 @@ namespace MasodikValodiCsharpProjekt
                 Console.WriteLine();
             }*/
 
-            // 34. feladat:
+            /* 34. feladat:
+            Console.WriteLine("A párosan speciális számok: ");
             for (int i = 10; i < 100; i++)
             {
+                int kulsoTizes = i / 10;
+                int kulsoEgyes = i % 10;
                 for (int j = 10; j < 100; j++)
                 {
-
+                    int belsoTizes = j / 10;
+                    int belsoEgyes = j % 10;
+                    int belsoSzorzat = i * j;
+                    int kulso = 10 * kulsoEgyes + kulsoTizes;
+                    int belso = 10 * belsoEgyes + belsoTizes;
+                    int kulsoszorzat = kulso * belso;
+                    if (belsoSzorzat == kulsoszorzat)
+                    {
+                        Console.WriteLine($"Az {i} és {j} párosan speciális számok.");
+                    }
                 }
+            }*/
 
-                for (int k = 10; k < 100; k++)
+            // 35. feladat:
+            int sorok = 5;
+            for (int i = 0; i < sorok; i++)
+            {
+                for (int j = 0; j < sorok + 1; j++)
                 {
-
+                    if (97 + i + j * sorok  < 123)
+                    {
+                        Console.SetCursorPosition(j * 10, i);
+                        Console.WriteLine($"{(char)(97 + i + j * sorok)} {97 + i + j * sorok}");
+                    }
                 }
             }
 
