@@ -172,9 +172,21 @@ namespace Ismetles2
             int hossz = a.Length;
             int[] b = new int[hossz - 1];
 
-            for (int i = 0; i < b.Length; i++)
+            for (int i = 0; i < hossz; i++)
             {
+                if (szam != a[i] && i < hossz - 1)
+                {
                     b[i] = a[i];
+                }
+                else if (szam == a[i] && (i == hossz - 1))
+                {
+                    break;
+                }
+                else if (szam == a[i] && i < hossz - 1)
+                {
+                    b[i] = a[i + 1];
+                    i++;
+                }
             }
 
             return b;
