@@ -57,8 +57,8 @@ namespace Ismetles2
 							{
 								pontokX = EggyelCsokkent(pontokX[i], pontokX);
 								pontokY = EggyelCsokkent(pontokY[i], pontokY);
-								xCoord = EggyelNovelX(xCoord);
-								yCoord = EggyelNovelY(yCoord);
+								xCoord = EggyelNovel('x', xCoord);
+								yCoord = EggyelNovel('y', yCoord);
 							}
 						}
 						Megrajzol(xCoord, yCoord);
@@ -74,8 +74,8 @@ namespace Ismetles2
 							{
 								pontokX = EggyelCsokkent(pontokX[i], pontokX);
 								pontokY = EggyelCsokkent(pontokY[i], pontokY);
-								xCoord = EggyelNovelX(xCoord);
-								yCoord = EggyelNovelY(yCoord);
+								xCoord = EggyelNovel('x', xCoord);
+								yCoord = EggyelNovel('y', yCoord);
 							}
 						}
 						Megrajzol(xCoord, yCoord);
@@ -91,8 +91,8 @@ namespace Ismetles2
 							{
 								pontokX = EggyelCsokkent(pontokX[i], pontokX);
 								pontokY = EggyelCsokkent(pontokY[i], pontokY);
-								xCoord = EggyelNovelX(xCoord);
-								yCoord = EggyelNovelY(yCoord);
+								xCoord = EggyelNovel('x', xCoord);
+								yCoord = EggyelNovel('y', yCoord);
 							}
 						}
 						Megrajzol(xCoord, yCoord);
@@ -108,8 +108,8 @@ namespace Ismetles2
 							{
 								pontokX = EggyelCsokkent(pontokX[i], pontokX);
 								pontokY = EggyelCsokkent(pontokY[i], pontokY);
-								xCoord = EggyelNovelX(xCoord);
-								yCoord = EggyelNovelY(yCoord);
+								xCoord = EggyelNovel('x', xCoord);
+								yCoord = EggyelNovel('y', yCoord);
 							}
 						}
 						Megrajzol(xCoord, yCoord);
@@ -206,7 +206,7 @@ namespace Ismetles2
 			return b;
 		}
 
-		static int[] EggyelNovelX(int[] tomb)
+		static int[] EggyelNovel(char a, int[] tomb)
 		{
 			int hossz = tomb.Length;
 			int[] b = new int[hossz + 1];
@@ -215,23 +215,16 @@ namespace Ismetles2
 			{
 				b[i] = tomb[i - 1];
 			}
-
-			b[0] = tomb[0] - 1;
-
-			return b;
-		}
-
-		static int[] EggyelNovelY(int[] tomb)
-		{
-			int hossz = tomb.Length;
-			int[] b = new int[hossz + 1];
-
-			for (int i = 1; i < hossz + 1; i++)
+			
+			if (a == 'x')
 			{
-				b[i] = tomb[i - 1];
-			}
+				b[0] = tomb[0] - 1;
 
-			b[0] = tomb[0];
+			}
+			else if (a == 'y'
+			{
+				b[0] = tomb[0];
+			}
 
 			return b;
 		}
