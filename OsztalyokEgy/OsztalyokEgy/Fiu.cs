@@ -9,11 +9,16 @@ namespace OsztalyokEgy
     class Fiu : Ember
     {
         private bool szemelyiSzamEgyesE;
-        public Fiu(int mag, int test, string szul, bool szem) : base(mag, test, szul)
+
+        public bool SzemelyiSzamEgyesE
         {
-            this.szemelyiSzamEgyesE = szem;
+            get { return szemelyiSzamEgyesE; }
+            set { this.szemelyiSzamEgyesE = value; }
         }
 
-        
+        public Fiu(int magassag, int testsuly, string szuletesiEv, bool szem) : base(magassag, testsuly, szuletesiEv)
+        {
+            this.szemelyiSzamEgyesE = szem;
+        } 
     }
 }

@@ -11,7 +11,7 @@ namespace OsztalyokEgy
         static void Main(string[] args)
         {
             //Console.WriteLine($"Évfolyam: {Ember.evfolyam}, osztály: {Ember.osztaly}");
-            Ember.KiirOsztaly();
+            //Ember.KiirOsztaly();
             /*Ember[] emberTomb = new Ember[2];
 
             for (int i = 0; i < 2; i++)
@@ -62,9 +62,18 @@ namespace OsztalyokEgy
             }
 
             emberTomb[1].Kiir(2);*/
-
-            Fiu fiu = new Fiu(12, 24, "rr", true);
-            Console.WriteLine(fiu.Magassag);
+            
+            try
+            {
+                Fiu fiu = new Fiu(176, -65, "2001.01.07", false);
+                fiu.Kiir(fiu.SzemelyiSzamEgyesE);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
+            
 
             Console.ReadKey(true);
         }
@@ -160,6 +169,21 @@ namespace OsztalyokEgy
             Console.WriteLine($"Az {i}. ember testsúlya: {this.testsuly}");
             Console.WriteLine($"Az {i}. ember születési éve: {this.szuletesiEv}");
             Console.WriteLine($"Az {i}. ember osztálya: {evfolyam}/{osztaly}");
+        }
+
+        public void Kiir(bool ertek)
+        {
+            Console.WriteLine($"Az ember magassága: {this.magassag}");
+            Console.WriteLine($"Az ember testsúlya: {this.testsuly}");
+            Console.WriteLine($"Az ember születési éve: {this.szuletesiEv}");
+            if (ertek)
+            {
+                Console.WriteLine($"Az ember fiú.");
+            }
+            else
+            {
+                Console.WriteLine($"Az ember lány.");
+            }
         }
 
         static public void KiirOsztaly()
