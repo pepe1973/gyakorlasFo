@@ -10,13 +10,13 @@ namespace Sikidomok
     {
         static void Kiiras(Negyzet negy)
         {
-            if (negy is Negyzet)
+            if (negy is Teglalap)
             {
-                Console.WriteLine($"A negyzet kerülete: {(negy as Negyzet).KeruletSzamol()}");
+                Console.WriteLine($"A téglalap kerülete: {(negy as Teglalap).KeruletSzamol()}");
             }
-            else if (negy is Teglalap)
+            else
             {
-                Console.WriteLine($"A negyzet kerülete: {(negy as Teglalap).KeruletSzamol()}");
+                Console.WriteLine($"A négyzet kerülete: {negy.KeruletSzamol()}");
             }
             
         }
